@@ -158,22 +158,14 @@ public class FacebookLogin: CAPPlugin {
     }
 
     @objc func getAnonymousID(_ call: CAPPluginCall) {
-        print("xxx Plugin 1")
         let appEvents = AppEvents.shared
-        print("xxx Plugin 2")
         let anonymousId = appEvents.anonymousID
-        print("xxx Plugin 3")
-
-        print("xxx Debug: AppEvents.shared initialized")
-        print("xxx Debug: anonymousId retrieved: \(anonymousId)")
 
         if !anonymousId.isEmpty {
-            print("Debug: Resolving with anonymousId")
             call.resolve([
                 "anonymousId": anonymousId
             ])
         } else {
-            print("Debug: Rejecting due to empty anonymousId")
             call.reject("Facebook Anonymous ID is not available")
         }
     }
