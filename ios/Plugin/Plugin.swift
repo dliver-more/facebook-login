@@ -161,12 +161,18 @@ public class FacebookLogin: CAPPlugin {
         let appEvents = AppEvents.shared
         let anonymousId = appEvents.anonymousID
 
+        print("Debug: AppEvents.shared initialized")
+        print("Debug: anonymousId retrieved: \(anonymousId)")
+
         if !anonymousId.isEmpty {
+            print("Debug: Resolving with anonymousId")
             call.resolve([
                 "anonymousId": anonymousId
             ])
         } else {
+            print("Debug: Rejecting due to empty anonymousId")
             call.reject("Facebook Anonymous ID is not available")
         }
     }
+
 }
