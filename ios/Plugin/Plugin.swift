@@ -156,4 +156,14 @@ public class FacebookLogin: CAPPlugin {
         }
         call.resolve()
     }
+
+    @objc func getAnonymousID(_ call: CAPPluginCall) {
+        if let anonymousId = AppEvents.anonymousID {
+            call.resolve([
+                "anonymousId": anonymousId
+            ])
+        } else {
+            call.reject("Facebook Anonymous ID is not available")
+        }
+    }
 }

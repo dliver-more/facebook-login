@@ -34,6 +34,7 @@ export interface FacebookLoginPlugin {
   setAdvertiserIDCollectionEnabled(options: {
     enabled: boolean;
   }): Promise<void>;
+  getAnonymousID(): Promise<{ anonymousId: string }>;
 }
 
 export interface FacebookGetLoginStatusResponse {

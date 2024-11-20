@@ -54,6 +54,8 @@ declare interface Facebook {
     handle: (response: any) => void,
     options: { enabled: boolean },
   ): void;
+
+  getAnonymousID(): string; // Add this declaration for getAnonymousID
 }
 
 declare let FB: Facebook;
@@ -176,6 +178,17 @@ export class FacebookLoginWeb extends WebPlugin implements FacebookLoginPlugin {
           resolve(response as unknown as T);
         },
       );
+    });
+  }
+
+  async getAnonymousID(): Promise<{ anonymousId: string }> {
+    return new Promise<{ anonymousId: string }>((resolve, reject) => {
+      try {
+        const anonymousId = FB.getAnonymousID();
+        resolve({ anonymousId });
+      } catch (error) {
+        reject('Failed to retrieve anonymous ID: ' + error);
+      }
     });
   }
 

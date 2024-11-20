@@ -255,6 +255,7 @@ console.log(`Facebook user's email is ${result.email}`);
 * [`setAutoLogAppEventsEnabled(...)`](#setautologappeventsenabled)
 * [`setAdvertiserTrackingEnabled(...)`](#setadvertisertrackingenabled)
 * [`setAdvertiserIDCollectionEnabled(...)`](#setadvertiseridcollectionenabled)
+* [`getAnonymousID()`](#getanonymousid)
 * [Interfaces](#interfaces)
 * [Type Aliases](#type-aliases)
 
@@ -385,6 +386,17 @@ setAdvertiserIDCollectionEnabled(options: { enabled: boolean; }) => Promise<void
 | Param         | Type                               |
 | ------------- | ---------------------------------- |
 | **`options`** | <code>{ enabled: boolean; }</code> |
+
+--------------------
+
+
+### getAnonymousID()
+
+```typescript
+getAnonymousID() => Promise<{ anonymousId: string; }>
+```
+
+**Returns:** <code>Promise&lt;{ anonymousId: string; }&gt;</code>
 
 --------------------
 
