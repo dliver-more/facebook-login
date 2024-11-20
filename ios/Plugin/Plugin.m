@@ -14,4 +14,5 @@ CAP_PLUGIN(FacebookLogin, "FacebookLogin",
            CAP_PLUGIN_METHOD(setAutoLogAppEventsEnabled, CAPPluginReturnPromise);
            CAP_PLUGIN_METHOD(setAdvertiserTrackingEnabled, CAPPluginReturnPromise);
            CAP_PLUGIN_METHOD(setAdvertiserIDCollectionEnabled, CAPPluginReturnPromise);
+           CAP_PLUGIN_METHOD(getAnonymousID, CAPPluginReturnPromise);
 )
